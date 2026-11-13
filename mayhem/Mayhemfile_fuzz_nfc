@@ -1,0 +1,10 @@
+project: savantenvs/TagTinker
+target: fuzz_nfc
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_nfc/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_nfc
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_nfc/fuzz_nfc.dict
+    timeout: 5
